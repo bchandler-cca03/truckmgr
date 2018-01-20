@@ -90,12 +90,12 @@ namespace TruckManager.Controllers
         // POST: Pickup/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Truck deleteTruck, int id, IFormCollection collection)
+        public ActionResult Delete(int id, IFormCollection collection)
         {  // by virute of "model-binder" function, the incoming IFormCollection should bind and create an object deleteTruck
             try
             {
                 // Note: we do have an object here
-                _truckRepo.Delete(deleteTruck);  // does the remove method accept an object or only a
+                _truckRepo.Delete(id);  // does the remove method accept an object or only a
                 
                 return RedirectToAction(nameof(Index));
             }

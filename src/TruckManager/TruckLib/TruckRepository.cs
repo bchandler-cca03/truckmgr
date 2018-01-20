@@ -40,11 +40,10 @@ namespace CCALearn.TruckLib
             // A few notes:  only updating in-memory list.  could also create a new object and delete the old object; not done here.
             // If a database was involved, we would need to write to the database here. 
         }
-        public void Delete(Truck deleteTruck)
+        public void Delete(int id)
         {
-            // _trucks is the name of the shared list and Remove is a method on _trucks.
-            // we all remove and I believe we are done.
-            _trucks.Remove(deleteTruck);
+
+            _trucks.Remove(GetById(id));
         }
     }
 }
